@@ -59,18 +59,28 @@ img {
   vertical-align: middle;
 }
 
-li {
-  display: inline;
-  list-style-type: none;
-}
-
 p,
 li {
   color: #000;
   font-weight: 300;
 }
 
-ul > :not(:last-child)::after {
+.horizontal-ul {
+  list-style-position: inside;
+}
+
+.vertical-ul > li {
+  display: inline;
+  list-style-type: none;
+  flex-shrink: 0;
+}
+
+.vertical-ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.vertical-ul > :not(:last-child)::after {
   content: "\00B7";
   padding-left: 0.75rem;
   padding-right: 0.75rem;
